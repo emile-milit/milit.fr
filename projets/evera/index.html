@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milit for Evera</title>
+<base href="/">
+<meta name="description" content="Étude de cas Evera : création du nom de marque et du logotype d&#x27;une entreprise de location de véhicules électriques pour les entreprises.">
+<link rel="canonical" href="https://milit.fr/projets/evera/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Milit">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://milit.fr/projets/evera/">
+<meta property="og:title" content="Milit for Evera">
+<meta property="og:description" content="Étude de cas Evera : création du nom de marque et du logotype d&#x27;une entreprise de location de véhicules électriques pour les entreprises.">
+<meta property="og:image" content="https://milit.fr/og/projet-evera.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/pablogrotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Structure à nu. Un seul monde sombre, une seule famille, deux graisses.
+   La hiérarchie tient à la taille et au blanc. Les visuels de projets feront le décor :
+   ici ce sont des blocs gris, à remplacer. Police de chantier : se change sur la ligne --font. */
+@font-face{font-family:'Pablo Grotesk';src:url('fonts/pablogrotesk-regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Pablo Grotesk';src:url('fonts/pablogrotesk-semibold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+:root{
+  color-scheme:dark;
+  --font:'Pablo Grotesk',ui-sans-serif,system-ui,sans-serif;
+  --bg:#0A0A0A; --block:#161616; --text:#F0EFEB; --soft:rgba(240,239,235,.62); --faint:rgba(240,239,235,.34); --line:rgba(240,239,235,.12);
+  --accent:#E4271B;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-weight:400;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{overflow-x:hidden}
+::selection{background:var(--accent);color:var(--text)}
+h1,h2,h3,p,ul,dl,dd{margin:0;padding:0}
+h1,h2,h3{font-weight:600;text-wrap:balance}
+.top > .m{font-weight:600}
+b,strong{font-weight:600}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--faint);transition:text-decoration-color .2s var(--ease),color .2s var(--ease)}
+a:hover{text-decoration-color:var(--text)}
+:focus-visible{outline:1px solid var(--text);outline-offset:4px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+@media (min-width:760px){.wrap{padding:0 40px}}
+
+.hd{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.hd svg{width:30px;display:block}
+.hd nav{display:flex;gap:18px;font-size:16px}
+.burger{display:none}
+@media (max-width:759px){
+  .burger{display:flex;flex-direction:column;justify-content:center;gap:7px;width:44px;height:44px;margin-right:-10px;padding:10px;background:none;border:0;cursor:pointer;position:relative;z-index:2}
+  .burger span{display:block;height:1.5px;background:var(--text);transition:transform .3s var(--ease)}
+  .burger[aria-expanded="true"] span:first-child{transform:translateY(4.25px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:last-child{transform:translateY(-4.25px) rotate(-45deg)}
+  .hd nav{position:fixed;inset:60px 0 0 0;height:calc(100dvh - 60px);background:var(--bg);flex-direction:column;justify-content:center;gap:4px;padding:0 20px 60px;font-size:clamp(36px,11vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.15;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
+  .hd #mainnav a{color:var(--text)}
+  .hd #mainnav a[aria-current="page"]{color:var(--faint)}
+  body.menu-open .hd nav{opacity:1;visibility:visible}
+  body.menu-open{overflow:hidden}
+  body.menu-open .hd{background:var(--bg)}
+}
+.hd nav a{text-decoration:none;color:var(--soft)}
+.hd nav a:hover,.hd nav a[aria-current="page"]{color:var(--text)}
+
+main{display:block;padding-top:48px}
+@media (min-width:760px){main{padding-top:96px}}
+.xl{font-size:clamp(34px,7.2vw,104px);line-height:1.03;letter-spacing:-.03em}
+.l{font-size:clamp(28px,4.4vw,52px);line-height:1.05;letter-spacing:-.03em}
+.m{font-size:clamp(21px,2.4vw,28px);line-height:1.3;letter-spacing:-.01em;font-weight:400;max-width:30em}
+.s{font-size:16px;color:var(--soft)}
+.soft{color:var(--soft)}
+.measure{max-width:36em}
+.todo{color:var(--faint)}
+.stack{display:flex;flex-direction:column;gap:24px}
+.top{display:flex;flex-direction:column;gap:28px}
+.sec{padding-top:56px;padding-bottom:56px;display:flex;flex-direction:column;gap:32px}
+@media (min-width:760px){.sec{padding-top:112px;padding-bottom:112px;gap:48px}}
+.cols{display:grid;gap:20px}
+@media (min-width:900px){.cols{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:40px}}
+
+/* Visuel à remplacer */
+.ph{background:var(--block);aspect-ratio:16/9;display:flex;align-items:flex-end;padding:14px 16px;font-size:14px;color:var(--faint);width:100%}
+.ph.tall{aspect-ratio:4/3}
+.pic{display:block;width:100%;aspect-ratio:16/9;overflow:hidden}
+.pic.tall{aspect-ratio:4/3}
+.pic.sq,.ph.sq{aspect-ratio:1}
+.pic.logo img{object-fit:contain;padding:14%}
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 20px}
+@media (min-width:760px){.people{grid-template-columns:repeat(3,minmax(0,1fr));gap:64px 24px}}
+.person{display:flex;flex-direction:column;gap:14px}
+.person p{font-size:16px}
+.pic img{display:block;width:100%;height:100%;object-fit:cover}
+.pic.nat{aspect-ratio:auto}
+.pic.nat img{height:auto}
+.vid{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg)}
+.vid iframe{background:var(--bg)}
+.vid iframe,.reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.blocked{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;font-size:16px;color:var(--soft)}
+.reel .blocked{color:#0A0A0A}
+a.ph-link{display:block;text-decoration:none;overflow:hidden}
+a.ph-link .ph,a.ph-link .pic{transition:transform .6s var(--ease)}
+a.ph-link:hover .ph,a.ph-link:hover .pic{transform:scale(1.02)}
+
+/* Lignes */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;gap:6px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+@media (min-width:760px){.row{grid-template-columns:minmax(0,4fr) minmax(0,8fr);padding:26px 0}}
+.row.n{grid-template-columns:36px minmax(0,1fr)}
+@media (min-width:760px){.row.n{grid-template-columns:56px minmax(0,4fr) minmax(0,8fr)}}
+.row.n > :nth-child(3){grid-column:2}
+@media (min-width:760px){.row.n > :nth-child(3){grid-column:3}}
+.row p{color:var(--soft)}
+.row .big{color:var(--text)}
+.copy{font:inherit;font-size:16px;color:var(--soft);background:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.copy:hover{color:var(--text);border-color:var(--faint)}
+
+/* Les trois temps */
+.temps{display:grid;gap:16px 40px;padding:36px 0;border-bottom:1px solid var(--line);text-decoration:none}
+@media (min-width:900px){.temps{grid-template-columns:80px minmax(0,6fr) minmax(0,5fr);padding:56px 0;align-items:start}}
+.temps .k{color:var(--faint)}
+.temps{position:relative;overflow:hidden}
+.temps > *:not(.tg){position:relative;z-index:1}
+.tg{position:absolute;z-index:0;bottom:0;right:22%;transform:translateX(50%);width:calc(var(--gw) * .36px);height:auto;pointer-events:none}
+.tg.produire{bottom:auto;top:32px;width:calc(var(--gw) * .555px)}
+@media (max-width:899px){.tg{right:4%;transform:none;width:calc(var(--gw) * .24px)}.tg.produire{top:auto;bottom:-40%;width:calc(var(--gw) * .34px)}}
+.shero{position:relative;min-height:min(78svh,820px);display:flex;flex-direction:column;justify-content:flex-end;gap:14px}
+.shero > *:not(.sg){position:relative;z-index:1}
+.shero .xl{margin-top:16px}
+.sg{position:absolute;z-index:0;bottom:0;left:50%;transform:translateX(-50%);width:min(calc(var(--gw) * 1px), calc(var(--gw) * 100vw / 1512), calc(100% - 40px));height:auto;pointer-events:none}
+@media (max-width:759px){.shero{min-height:0;justify-content:flex-start}.sg{position:static;transform:none;align-self:center;width:min(calc(var(--gw) * 100vw / 1000), 100%);margin-bottom:28px}.shero .xl{margin-top:4px}}
+.temps:hover h2{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+
+.cards{display:grid;gap:48px 20px}
+@media (min-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:72px 24px}}
+.card{display:flex;flex-direction:column;gap:14px}
+.card h3{font-size:clamp(24px,3vw,36px);letter-spacing:-.03em;line-height:1.05}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-decoration-thickness:2px}
+.links{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:16px;color:var(--soft)}
+
+.filter{display:flex;flex-wrap:wrap;gap:6px 22px}
+.filter button{font:inherit;font-size:18px;background:none;border:0;padding:4px 0;color:var(--faint);cursor:pointer;border-bottom:1px solid transparent}
+.filter button:hover{color:var(--text)}
+.filter button[aria-pressed="true"]{color:var(--text);border-bottom-color:var(--text)}
+
+.fiche{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px 24px;border-top:1px solid var(--line);padding-top:20px}
+.fiche dt{font-size:15px;color:var(--faint)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:28px 24px}
+.stats b{display:block;font-size:clamp(30px,3.6vw,52px);letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums;white-space:nowrap;margin-bottom:8px}
+.quote{font-size:clamp(26px,4.4vw,56px);font-weight:400;letter-spacing:-.03em;line-height:1.08;max-width:20em}
+.tbl{overflow-x:auto}
+.tbl table{border-collapse:collapse;width:100%;min-width:400px}
+.tbl th{font-weight:400;font-size:15px;color:var(--faint);text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line)}
+.tbl td{padding:14px 12px 14px 0;border-bottom:1px solid var(--line);color:var(--soft);font-variant-numeric:tabular-nums}
+.tbl td:first-child{color:var(--text)}
+.big{font-size:clamp(28px,5vw,64px);font-weight:600;letter-spacing:-.035em;line-height:1.02;text-decoration-thickness:2px;text-underline-offset:8px}
+.ft{margin-top:40px;border-top:1px solid var(--line);padding:28px 0 44px;font-size:16px;color:var(--soft)}
+.ft .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+.ft nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.offers{display:grid;gap:40px 24px;margin:48px 0 56px}
+@media (min-width:760px){.offers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.offer{display:flex;flex-direction:column;gap:10px;text-decoration:none}
+.offer .pic{margin-bottom:8px}
+.offer b{font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.03em;line-height:1.08}
+.offer:hover b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.legal h2{font-size:clamp(20px,2vw,26px);margin-top:20px}
+.legal p{max-width:44em}
+.home{padding-top:0}
+.stage{position:relative;height:250svh}
+.pin{position:sticky;top:60px;height:calc(100svh - 60px);overflow:hidden;display:flex;align-items:center}
+.heroin{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;gap:clamp(32px,7vh,84px);will-change:opacity,transform}
+.heroin h1{font-size:clamp(36px,8.7vw,150px);line-height:1.03;letter-spacing:-.03em}
+.heroin h1 span{display:block;white-space:nowrap}
+.who{display:grid;grid-template-columns:clamp(84px,15vw,190px) minmax(0,1fr);gap:clamp(16px,2.2vw,28px);align-items:center;max-width:980px}
+.who .pic{aspect-ratio:1}
+.who p{font-size:clamp(15px,1.55vw,22px);line-height:1.4}
+.who .stack{gap:clamp(10px,1.6vw,22px)}
+@media (max-width:759px){.who{grid-template-columns:1fr;gap:20px}.who .pic{order:2;width:min(150px,40vw)}.who .stack{order:1}}
+.logo3d{position:absolute;top:-6%;right:-22vw;width:104vw;max-width:none;aspect-ratio:1;mix-blend-mode:screen;pointer-events:none;-webkit-mask-image:radial-gradient(closest-side,#000 25%,transparent 92%);mask-image:radial-gradient(closest-side,#000 25%,transparent 92%)}
+@media (min-width:900px){.logo3d{top:-14%;right:-3%;width:min(56vw,880px)}}
+.reel{position:absolute;z-index:2;left:50%;top:50%;width:min(92vw,calc((100svh - 108px)*1.711));aspect-ratio:10000/5844;background:#D6D6D6;color:#0A0A0A;display:grid;place-items:center;font-size:clamp(22px,5vw,76px);letter-spacing:-.02em;transform:translate(-50%,120vh);will-change:transform}
+@media (prefers-reduced-motion:reduce){.stage{height:auto}.pin{position:static;height:auto;display:block;padding:48px 0}.reel{position:static;transform:none!important;margin:56px auto 0}.heroin{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hd">
+  <div class="wrap">
+    <a href="/" aria-label="milit, accueil">
+      <svg viewBox="0 0 323.6 268.5" aria-hidden="true"><path fill="#F0EFEB" d="M292.8,69.2L302.6,0H31.4L0,220.4h89.5l-6.8,48.1l101.6-48.1H302l21.5-151.2H292.8z M101,92.4L101,92.4  L111.2,21h41.9l-13.1,92H98.1L101,92.4z M174.4,21h48.5L216,69.2h-48.5L174.4,21z M244.1,21h34.3l-6.9,48.2h-34.3L244.1,21z M90,21  l-9.7,68.4h0l-0.1,0.9H39.7L49.6,21H90z M283.8,199.4H179.5L109,232.8l4.7-33.4H24.2l12.5-88.1h40.4L73.9,134h63.2l-2.6,18.2h91  l3-21h-69.7l5.9-41.1h134.8L283.8,199.4z"/></svg>
+    </a>
+    <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Ouvrir le menu"><span></span><span></span></button>
+    <nav aria-label="Navigation principale" id="mainnav">
+      <a href="/projets/" data-nav="projets">réalisations</a>
+      <a href="/mes-services/" data-nav="services">services</a>
+      <a href="/ecosysteme/" data-nav="ecosysteme">écosystème</a>
+      <a href="/contact/" data-nav="contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app">
+  <section class="wrap top">
+    <p class="soft"><a href="/projets/">réalisations</a></p>
+    <h1 class="xl">milit for Evera</h1>
+    <p class="m">Un nom à la mesure d'une ambition : ouvrir une nouvelle ère de la mobilité en entreprise.</p>
+    <picture class="pic "><source type="image/avif" srcset="img/evera-hero-800.avif 800w, img/evera-hero-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="img/evera-hero-800.webp 800w, img/evera-hero-1600.webp 1600w" sizes="100vw"><img src="img/evera-hero-1600.webp" width="1600" height="900" alt="visuel principal ou film"  decoding="async"></picture>
+    <dl class="fiche">
+      <div><dt>Client</dt><dd>Evera</dd></div>
+      <div><dt>Secteur</dt><dd>Location automobile B2B</dd></div>
+      <div><dt>Année</dt><dd>2024</dd></div>
+      <div><dt>Collaboration</dt><dd>Mission de création</dd></div>
+    </dl>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><p class="soft">Le point de départ</p><p class="m">Gleev proposait un abonnement automobile tout-en-un pour les entreprises. Pour entrer sur le marché de la location B2B, la startup avait besoin d'un nom à la mesure de son ambition.</p></div>
+  </section>
+
+  
+  <section class="wrap sec">
+    <div class="cols">
+      <h2 class="l"><a href="/mes-services/imaginer-positionner/">Imaginer et positionner</a></h2>
+      <div class="stack" style="gap:28px"><p class="m">J'ai commencé par challenger le brief et étudier le marché de la location en entreprise. Le positionnement « électrique d'abord » restait le vrai différenciant : il fallait le garder.</p><div class="rows"><div class="row"><b>Evera, pour EV et ERA.</b><p>Le nom dit l'ambition des fondateurs : ouvrir une nouvelle ère de mobilité durable.</p></div><div class="row"><b>Un nom validé avant d'être dessiné.</b><p>Recherche d'antériorité et validation juridique avant tout travail typographique.</p></div></div><picture class="pic nat"><source type="image/avif" srcset="img/evera-dispo-800.avif 800w, img/evera-dispo-978.avif 978w" sizes="100vw"><source type="image/webp" srcset="img/evera-dispo-800.webp 800w, img/evera-dispo-978.webp 978w" sizes="100vw"><img src="img/evera-dispo-978.webp" width="978" height="986" alt="visuel : imaginer et positionner" loading="lazy" decoding="async"></picture></div>
+    </div>
+  </section>
+  <section class="wrap sec">
+    <div class="cols">
+      <h2 class="l"><a href="/mes-services/soigner-installer/">Soigner et installer</a></h2>
+      <div class="stack" style="gap:28px"><div class="rows"><div class="row"><b>Un lettrage sur-mesure construit sur une boucle.</b><p>Elle dessine les voyelles du nom et lui donne son rythme.</p></div><div class="row"><b>Un icotype : le E, seul.</b><p>Il ne s'affiche pas à côté du lettrage. Il sert de favicon, et vit en grand, en filigrane, la ligne du E se prolongeant au-delà de la lettre.</p></div><div class="row"><b>Une animation de révélation du logotype.</b><p></p></div></div><picture class="pic nat"><img src="img/evera-logo-850.webp" width="850" height="850" alt="visuel : soigner et installer" loading="lazy" decoding="async"></picture><picture class="pic nat"><source type="image/avif" srcset="img/evera-mobile-800.avif 800w, img/evera-mobile-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="img/evera-mobile-800.webp 800w, img/evera-mobile-1600.webp 1600w" sizes="100vw"><img src="img/evera-mobile-1600.webp" width="1600" height="1600" alt="visuel : soigner et installer" loading="lazy" decoding="async"></picture></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><h2 class="l">Et aujourd'hui ?</h2>
+      <div class="stack" style="gap:36px">
+        
+        <p class="m">Evera est une entreprise ambitieuse, qui s'impose aujourd'hui au niveau régional dans la location de véhicules électriques aux entreprises.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><p class="soft">L'équipe</p>
+      <div class="rows">
+        <div class="row"><b>Emile Londero</b><p>Création du nom et direction artistique</p></div>
+        <div class="row"><b><a href="/ecosysteme/">Louana Jaud</a></b><p>Graphisme et animation</p></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="wrap sec">
+    <h2 class="l">À voir aussi</h2>
+    <div class="cards">
+  <article class="card">
+    <a class="ph-link" href="/projets/emile-pour-keenest/" aria-label="milit for Keenest"><picture class="pic tall"><source type="image/avif" srcset="img/keenest-arc-800.avif 800w, img/keenest-arc-1600.avif 1600w" sizes="(min-width:760px) 50vw, 100vw"><source type="image/webp" srcset="img/keenest-arc-800.webp 800w, img/keenest-arc-1600.webp 1600w" sizes="(min-width:760px) 50vw, 100vw"><img src="img/keenest-arc-1600.webp" width="1600" height="2000" alt="visuel Keenest" loading="lazy" decoding="async"></picture></a>
+    <h3><a href="/projets/emile-pour-keenest/">milit for Keenest</a></h3>
+    <p class="soft measure">Une marque vivante, que l'équipe fait tourner seule.</p>
+    <div class="links"><a href="/mes-services/imaginer-positionner/">Imaginer et positionner</a><a href="/mes-services/soigner-installer/">Soigner et installer</a><a href="/mes-services/produire-generer/">Produire et générer</a></div>
+  </article>
+  <article class="card">
+    <a class="ph-link" href="/projets/milit-for-labs214/" aria-label="milit for Labs214"><picture class="pic tall"><source type="image/avif" srcset="img/labs214-800.avif 800w, img/labs214-1284.avif 1284w" sizes="(min-width:760px) 50vw, 100vw"><source type="image/webp" srcset="img/labs214-800.webp 800w, img/labs214-1284.webp 1284w" sizes="(min-width:760px) 50vw, 100vw"><img src="img/labs214-1284.webp" width="1284" height="852" alt="visuel Labs214" loading="lazy" decoding="async"></picture></a>
+    <h3><a href="/projets/milit-for-labs214/">milit for Labs214</a></h3>
+    <p class="soft measure">Refaire coïncider l'identité avec l'ambition des fondateurs.</p>
+    <div class="links"><a href="/mes-services/imaginer-positionner/">Imaginer et positionner</a><a href="/mes-services/soigner-installer/">Soigner et installer</a><a href="/mes-services/produire-generer/">Produire et générer</a></div>
+  </article></div>
+  </section>
+  
+  <section class="wrap sec">
+    <p class="m">Pas une présentation commerciale : un échange sur votre vision et ce qui mérite d'être soigné.</p>
+    <p><a class="big" href="/contact/">Commençons par une conversation.</a></p>
+    <p class="soft">Voir le projet en vrai : <a href="https://www.evera.co">evera.co</a></p>
+  </section></main>
+
+<footer class="ft">
+  <div class="wrap">
+    <nav aria-label="Pied de page">
+      <a href="/projets/">réalisations</a>
+      <a href="/mes-services/">services</a>
+      <a href="/ecosysteme/">écosystème</a>
+      <a href="/contact/">contact</a>
+      <a href="https://fr.linkedin.com/in/emile-londero">linkedIn</a>
+    </nav>
+    <span>© Milit 2026 · <a href="/mentions-legales/">Mentions légales</a></span>
+  </div>
+</footer>
+
+<script>window.__STATIC__=true;window.__KEY__="projet-evera";window.__NAV__="projets";</script>
+<script>/* ============================================================
+   LA SOURCE : trois listes. Tout le maillage en découle.
+   SERVICES  les trois temps, signés Emile.
+   PEOPLE    l'écosystème.
+   PROJECTS  chaque projet déclare ses temps (ce qui a été fait) et son équipe (qui, quoi, sur quel temps).
+   ============================================================ */
+const T = (t) => ''; /* trous de contenu : rien ne s'affiche */
+
+const SERVICES = [
+  { id:'s1', n:'1', slug:'service-imaginer-positionner', name:'Imaginer et positionner', glyph:'imaginer', gw:913, gh:399,
+    thesis:`Qui prétend faire une marque sans prendre position ?`,
+    constat:`On réduit souvent le métier créatif au dessin. Il commence avant, à la source : un duo entre le contexte et l'imagination. Du concret, et des idées.`,
+    doLabel:'Ce que je fais',
+    items:[
+      ['Le gisement',`Des entretiens approfondis avec les associés et les experts pour extraire ce que personne d'autre ne sait. Récits, convictions, données, façons de voir le métier.`],
+      ['Le positionnement',`Le contexte : votre marché, et la place précise que vos idées doivent y prendre.`],
+      ['Le territoire de marque',`L'imagination : les idées, les mots et les images qui donnent sa direction à tout le reste.`],
+      ['Le naming',`Un nom né de la vision des associés, testé contre ce que les IA proposent sur le même brief. S'il aurait pu sortir d'un prompt, on le jette.`]
+    ],
+    reste:`Une position claire et des idées qui n'appartiennent qu'à vous. Sur ce temps, je travaille seul, en direct avec les associés.`,
+    preuve:`Pour <a href="#projet-evera">Evera</a>, j'ai challengé le brief et étudié le marché avant de chercher un nom. Le positionnement « électrique d'abord » restait le vrai différenciant : le nom en découle.`,
+    ensuite:`Une idée positionnée attend sa forme.` },
+
+  { id:'s2', n:'2', slug:'service-soigner-installer', name:'Soigner et installer', glyph:'soigner', gw:641, gh:624,
+    thesis:`Tout ce qui se génère finit par se ressembler. La valeur d'une marque se loge dans ce qu'aucune machine ne peut inventer.`,
+    constat:`C'est l'application créative : dessiner, créer, donner une forme aux idées. Puis les installer là où l'équipe travaille. Une charte qu'on ne lit pas ne protège rien.`,
+    doLabel:'Ce que je fais',
+    items:[
+      ['Le logotype',`Un signe qui raconte quelque chose de vrai sur l'entreprise, pas une tendance du moment.`],
+      ['Les lettrages',`Des lettres dessinées pour la marque, une signature typographique que personne ne peut emprunter.`],
+      [`L'univers visuel`,`Images originales, illustration, langage graphique. Avec les talents de l'écosystème quand le projet le demande.`],
+      ['La voix écrite',`Ton, lexique, formules et notions directrices intégrés au contexte des projets Claude.`],
+      ['La bibliothèque visuelle',`Logotype, lettrages, images, couleurs et gabarits centralisés dans Figma, à jour pour tout le monde.`],
+      ['Les gabarits de génération',`Prêts pour Claude Design, pour produire juste dès le premier jet.`]
+    ],
+    reste:`Des assets créés une fois, avec exigence, qui travaillent pendant des années. Et deux bibliothèques vivantes que l'équipe utilise sans y penser, et que je nourris en continu.`,
+    preuve:`Chez <a href="#projet-keenest">Keenest</a>, le fondateur a collé son brief dans Claude Design au lieu de me l'envoyer. Deux heures plus tard, il avait une vidéo juste. Et c'est moi qui lui faisais des retours.`,
+    ensuite:`La marque est en place. Reste à décider ce qu'elle va dire, et à quel rythme.` },
+
+  { id:'s3', n:'3', slug:'service-produire-generer', name:'Produire et générer', glyph:'produire', gw:808, gh:539,
+    thesis:`On ne lance pas des contenus. On lance des formats.`,
+    constat:`Produire chaque contenu à la main épuise l'équipe. Produire en masse noie la marque. Le format résout les deux : on le fabrique à la main, puis on le génère quand il est prêt. Et certaines choses restent faites à la main.`,
+    doLabel:'Ce que je fais, en quatre temps',
+    items:[
+      ['Lancer',`Définir le besoin avec les associés. À qui il s'adresse, ce qu'il apporte, à quelle fréquence.`],
+      ['Créer',`Structure, formules, gabarits visuels, parfois des images ou des lettrages dédiés. Tout rejoint les bibliothèques.`],
+      ['Tester',`Les premiers numéros sont produits ensemble, à la main, jusqu'à ce que le format trouve sa forme.`],
+      ['Générer',`L'équipe prend le relais. Le format tourne, la qualité tient.`]
+    ],
+    reste:`Un format qui tourne sans goulot d'étranglement, et une base plus solide pour le suivant. Produire vite ne veut pas dire produire tout le temps : chaque format doit être utile à sa communauté.`,
+    preuve:`La newsletter des campagnes <a href="#projet-keenest">Keenest</a> : écrite à la main jusqu'à trouver son ton, produite aujourd'hui en autonomie par l'équipe, avec 42 % d'ouverture moyenne.`,
+    ensuite:`Certains formats méritent d'aller plus loin : un film, un vrai média. C'est là que l'écosystème entre en jeu.` }
+];
+
+const PEOPLE = [
+  { id:'infuse', name:'Infuse', job:'Production vidéo.', eco:true, kind:'logo' },
+  { id:'hugo', name:'Hugo Stépanian', job:'Communicant. Éditorial et newsletters.', eco:true, kind:'portrait' },
+  { id:'hovra', name:'Agence Hovra', job:'Relation client, pilotage de projet et supports digitaux.', eco:true, kind:'logo', svg:'img/hovra-logo.svg', bg:'#f0efe8' },
+  { id:'louana', name:'Louana Jaud', job:'Graphiste. Graphisme, illustration et animation.', eco:true, kind:'portrait' },
+  { id:'brandon', name:'Justa', credit:'Brandon Ruaux', job:'Intégration web.', eco:true, kind:'logo' },
+  { id:'morgane', name:'Morgane Kirmann', job:'DA. Graphisme print et packaging.', eco:true, kind:'portrait' },
+  { id:'oram', name:'Oram Dannrheteur', job:'Vidéaste.', eco:false }
+];
+
+const OFFERS = [
+  { name:'La marque clé en main', withLabel:'avec Hovra', since:'2022', film:'offre-hovra',
+    thesis:`La pertinence de Milit décuplée par la force de frappe de l'agence Hovra.`,
+    text:`Je crée la marque, Hovra pilote le projet et réalise les supports digitaux. La marque et les campagnes de communication peuvent être lancées.`,
+    items:[
+      ['La marque',`Stratégie de marque et direction artistique, par Milit.`],
+      ['Le pilotage',`Relation client et conduite du projet, par Hovra.`],
+      ['Les supports digitaux',`Réalisés par Hovra, à partir de la marque.`]
+    ] },
+  { name:'La marque en mouvement', withLabel:'avec Infuse', since:'2020', film:'offre-infuse',
+    thesis:`Une marque qui bouge doit rester reconnaissable à chaque image.`,
+    text:`La vidéo coûte cher et s'improvise souvent hors de la marque, avec les codes génériques de tout le monde. C'est l'endroit où la singularité se perd le plus vite.`,
+    items:[
+      ['La stratégie créative',`Définir les objectifs, le récit à défendre et les formats qui le portent le mieux.`],
+      ['La campagne de communication',`Poser la ligne éditoriale, choisir les sujets et les canaux de diffusion.`],
+      ['La production audiovisuelle',`Des films tournés en studio, augmentés par l'IA, livrés en quelques jours avec une exigence de cinéma.`]
+    ],
+    frontiere:`Infuse filme et produit. Je garde la direction de marque et je relie chaque image aux assets de la marque.` },
+  { name:'La marque qui se raconte', withLabel:'avec Hugo', since:'2024', film:'offre-hugo',
+    thesis:`Produire est à la portée de tous. Susciter l'attente reste rare.`,
+    text:`Avec Hugo, nous concevons et produisons des newsletters éditoriales. C'est le seul format qui arrive directement chez sa communauté, sur une audience qui vous appartient. Encore faut-il qu'on ait envie de l'ouvrir.`,
+    items:[
+      ['La conception',`Angle, nom, promesse de lecture, rubriques, charte éditoriale et graphique.`],
+      ['La production',`Rédaction, direction artistique, mise en page, intégration dans l'outil, tenue du calendrier.`],
+      ['Le casting',`Sélection et interview des experts et des praticiens qui donnent sa crédibilité à chaque numéro.`],
+      ['La promotion',`Une feuille de route pour faire grandir la base, mesurer, recycler les contenus.`]
+    ],
+    frontiere:`Hugo écrit à partir du gisement et de la voix installés par Milit. C'est ce qui rend chaque newsletter impossible à copier.` }
+];
+
+const PROJECTS = [
+  { id:'keenest', name:'Keenest', url:'https://keenest.co', urlLabel:'keenest.co',
+    accroche:`Une marque vivante, que l'équipe fait tourner seule.`,
+    fiche:{ secteur:'Investissement à impact', annee:'Depuis 2023', collab:'Head of brand à temps partagé' },
+    depart:`Keenest a commencé par financer des technologies à impact avec sa communauté d'investisseurs, sur un modèle de financement participatif Web3. L'entreprise est ensuite devenue un club deal dédié à l'impact. C'est aujourd'hui une véritable application d'investissement, avec plusieurs club deals et un fonds en préparation.`,
+    steps:[
+      { s:'s1', note:`Un nom né de la vision du fondateur, et trois notions qui guident tout le reste.`,
+        intro:`Tout part de la vision de Jérémie, le fondateur.`,
+        checks:[
+          ['Trois notions comme boussole.',`L'enthousiasme, le mouvement perpétuel, la transparence. Elles donnent le ton et servent à trancher.`],
+          [`Un nom né d'une vision, pas d'une tendance.`,`Le marché a bougé, le business model a évolué : il n'a pas changé.`]
+        ] },
+      { s:'s2', note:`Un logotype qui n'a pas bougé d'un trait, puis la marque installée dans Figma et dans les projets Claude.`,
+        checks:[
+          ['Une vision futuriste assumée.',`Les images mêlent le concret des innovations financées et ce qu'elles pourraient devenir.`],
+          ['Des jeux de transparence qui disent vrai.',`Ils traduisent la transparence des frais et des opérations de la plateforme.`],
+          ['Deux bibliothèques vivantes.',`Figma pour le visuel, les projets Claude pour la voix : la marque est là où l'équipe travaille.`]
+        ] },
+      { s:'s3', note:`La newsletter des campagnes : écrite à la main, puis produite en autonomie par l'équipe. 42 % d'ouverture moyenne.`,
+        intro:`Un format, quatre temps : la newsletter des campagnes de financement.`,
+        checks:[
+          ['Lancer.',`Informer la communauté sur chaque projet financé.`],
+          ['Créer.',`Plonger dans chaque secteur, avec les données précises que détiennent les analystes.`],
+          ['Tester.',`Les premiers numéros écrits à la main, jusqu'au bon ton et à la bonne structure.`],
+          ['Générer.',`L'équipe produit aujourd'hui la newsletter en autonomie.`]
+        ] }
+    ],
+    stats:[['8 000+','investisseurs fédérés'],['10 M€+','financés pour des technologies à impact'],['42 %',`d'ouverture moyenne de la newsletter`]],
+    today:`Quand Jérémie a eu besoin d'un motion design, il n'a pas envoyé son brief : il l'a collé dans Claude Design. Deux heures plus tard, il avait sa vidéo. Et c'est moi qui lui faisais des retours.`,
+    emile:'Head of brand',
+    team:[['louana','Graphisme','s2'],['oram','Vidéo','s3'],['hugo','Newsletter et articles','s3'],['brandon','Intégration du site','s3']] },
+
+  { id:'labs214', name:'Labs214', url:'https://labs214.com', urlLabel:'labs214.com',
+    accroche:`Refaire coïncider l'identité avec l'ambition des fondateurs.`,
+    fiche:{ secteur:'Design et conseil en innovation', annee:'2023', collab:'Mission de création' },
+    depart:`L'ancienne identité de Labs214 ne reflétait plus les ambitions de Lauren et Sébastien, ses fondateurs. Il fallait repenser le territoire de marque et l'identité visuelle.`,
+    steps:[
+      { s:'s1', note:`Un territoire de marque défini avec les fondateurs : passeur vers demain.`,
+        intro:`Le travail a commencé avec Lauren et Sébastien, pour trouver ce qui les anime.`,
+        checks:[
+          ['Un territoire de marque avant tout dessin.',`Défini avec les fondateurs, il donne sa direction à tout le reste.`],
+          ['Une formule : passeur vers demain.',`${T('ce qu\'elle a permis de trancher')}`]
+        ] },
+      { s:'s2', note:`Logotype, identité visuelle et langage graphique pour un univers immersif.`,
+        checks:[['Un univers immersif.',`Logotype, identité visuelle et langage graphique composent un seul monde.`]] },
+      { s:'s3', note:`Un site immersif et des illustrations réalisées avec l'IA.`,
+        checks:[['Un site immersif.',`Il prolonge l'univers de marque en ligne.`],[`Des illustrations réalisées avec l'IA.`,`Elles servent le Fiction-lab.`]] }
+    ],
+    today:`Aujourd'hui, Lauren et Sébastien continuent de travailler avec des collectivités et de grandes entreprises pour dessiner le futur.`,
+    emile:'Stratégie de marque et direction artistique',
+    team:[['louana','Graphisme et illustration','s2']] },
+
+  { id:'evera', name:'Evera', url:'https://www.evera.co', urlLabel:'evera.co',
+    accroche:`Un nom à la mesure d'une ambition : ouvrir une nouvelle ère de la mobilité en entreprise.`,
+    fiche:{ secteur:'Location automobile B2B', annee:'2024', collab:'Mission de création' },
+    depart:`Gleev proposait un abonnement automobile tout-en-un pour les entreprises. Pour entrer sur le marché de la location B2B, la startup avait besoin d'un nom à la mesure de son ambition.`,
+    steps:[
+      { s:'s1', note:`Le brief challengé, le positionnement « électrique d'abord » conservé, et un nom : Evera, pour EV et ERA.`,
+        intro:`J'ai commencé par challenger le brief et étudier le marché de la location en entreprise. Le positionnement « électrique d'abord » restait le vrai différenciant : il fallait le garder.`,
+        checks:[
+          ['Evera, pour EV et ERA.',`Le nom dit l'ambition des fondateurs : ouvrir une nouvelle ère de mobilité durable.`],
+          [`Un nom validé avant d'être dessiné.`,`Recherche d'antériorité et validation juridique avant tout travail typographique.`]
+        ] },
+      { s:'s2', note:`Un lettrage sur-mesure construit sur une boucle répétée, et un icotype.`,
+        checks:[
+          ['Un lettrage sur-mesure construit sur une boucle.',`Elle dessine les voyelles du nom et lui donne son rythme.`],
+          ['Un icotype : le E, seul.',`Il ne s'affiche pas à côté du lettrage. Il sert de favicon, et vit en grand, en filigrane, la ligne du E se prolongeant au-delà de la lettre.`],
+          ['Une animation de révélation du logotype.','']
+        ] }
+    ],
+    today:`Evera est une entreprise ambitieuse, qui s'impose aujourd'hui au niveau régional dans la location de véhicules électriques aux entreprises.`,
+    emile:'Création du nom et direction artistique',
+    team:[['louana','Graphisme et animation','s2']] },
+
+  { id:'offn', name:'Offn', url:'https://offn.fr', urlLabel:'offn.fr',
+    accroche:`Donner un visage à une plateforme qui cultive la confidentialité.`,
+    fiche:{ secteur:'Immobilier off-market', annee:'2025', collab:'Mission de création' },
+    depart:`Alexy et Anthony lançaient une plateforme confidentielle d'opportunités immobilières off-market. Le projet m'a été confié par Laura, de l'agence Hovra. L'enjeu : trouver l'équilibre entre crédibilité et confidentialité.`,
+    steps:[
+      { s:'s1', note:`Un territoire de marque entre crédibilité et confidentialité, et un nom court qui rompt avec les codes de l'immobilier.`,
+        intro:`Avec Hovra, nous avons cartographié les valeurs, les histoires et les ambitions des fondateurs, jusqu'à trouver un angle narratif tourné vers le futur.`,
+        checks:[['Un nom court et mémorisable.',`Il rompt volontairement avec les codes de l'immobilier.`]] },
+      { s:'s2', note:`Un lettrage minimaliste, un langage visuel intense et confidentiel, un manifeste et une vidéo de lancement.`,
+        checks:[['Un lettrage minimaliste.',`Il porte le nom, rien de plus.`],['Un langage visuel intense et confidentiel.',`À l'image de ce que la plateforme promet.`],['Un manifeste.',`${T('ce qu\'il pose')}`],['Une vidéo de lancement de marque.','']] }
+    ],
+    today:`Alexy et Anthony sont aujourd'hui des acteurs incontournables de l'off-market et du pré-market en Auvergne-Rhône-Alpes.`,
+    emile:'Stratégie de marque et direction artistique',
+    team:[['hovra','Relation client, pilotage du projet et supports digitaux','s2']] },
+
+  { id:'aubleu', name:'Aubleu', url:'https://aubleu.fr', urlLabel:'aubleu.fr',
+    accroche:`Un mareyeur qui simplifie la vie des chefs sans rien lâcher sur l'exigence.`,
+    fiche:{ secteur:'Mareyage B2B pour la restauration', annee:'2026', collab:'Mission de création' },
+    depart:`Après dix ans sur les marchés, Thomas lance son activité de mareyeur à Paris. Il vise la restauration, en commençant par la gastronomie.`,
+    steps:[
+      { s:'s1', note:`La gastronomie d'abord, trois piliers, et un nom né de la criée du matin et de la cuisson au bleu.`,
+        intro:`Le nom vient de deux images : la criée du matin et la cuisson au bleu. Trois piliers tiennent la marque : l'œil, le lien, la clarté.`,
+        checks:[
+          [`La gastronomie d'abord.`,`Les brasseries suivront.`],
+          [`L'efficacité comme signe de haut de gamme.`,`Facture claire, livraison avant 10h, conditions de paiement fixées dès le départ.`],
+          ['Une signature qui dit le métier.',`« La marée du matin. Le prix du jour. »`]
+        ] },
+      { s:'s2', note:`Un monogramme et des textures sur-mesure à la place des photos produits.`,
+        checks:[['Des textures sur-mesure plutôt que des photos produits.',`Faute de catalogue photo à ce stade, la marque a ses propres matières.`],['Un monogramme.','']] },
+      { s:'s3', note:`Le cours du jour en ligne, mis à jour chaque matin.`,
+        checks:[['Le cours du jour en ligne.',`Mobile first, accessible en un clic, il remplace le fax et le téléphone.`],['Une mise à jour par simple fichier Excel.',`Chaque matin, sans outil technique en plus.`],['Une vidéo de présentation.','']] }
+    ],
+    today:`Aubleu vient d'être lancé. En plus d'une identité soignée et pensée pour ses clients, Thomas dispose d'un outil industrialisé pour partager ses prix chaque matin : le cours du jour. Il lui permet d'entrer très vite en contact avec les restaurateurs. Les premiers contrats sont signés, et le démarrage est très fort.`,
+    emile:'Stratégie de marque et direction artistique',
+    team:[['hovra','Relation client, pilotage du projet et supports digitaux','s3']] },
+
+  { id:'lcarnet', name:`L'Carnet Édition`, url:'https://lcarnetedition.com', urlLabel:'lcarnetedition.com',
+    accroche:`Des carnets faits main, une marque tenue de l'atelier à la boutique.`,
+    fiche:{ secteur:'Carnets faits main', annee:'2026', collab:null },
+    depart:`L'Carnet Édition fabrique des carnets à la main. J'ai travaillé avec Laurence, la fondatrice, sur la création, et avec Loïc, co-fondateur, sur le marketing.`,
+    steps:[
+      { s:'s2', note:`Univers de marque, identité visuelle et direction artistique photo.`,
+        checks:[['Un univers de marque et une identité visuelle.',`${T('la décision et sa raison')}`],['Une ligne éditoriale.',`${T('la décision et sa raison')}`],['Une direction artistique photo.',`${T('la décision et sa raison')}`]] },
+      { s:'s3', note:`Une boutique en ligne, une boutique éphémère dans le Marais et une newsletter à 46 % d'ouverture moyenne.`,
+        checks:[['Une boutique en ligne.',''],['Une boutique éphémère dans le Marais.',`Un atelier galerie ouvert en juin, à Paris 3.`],['Une newsletter, avec Signet.',`46 % d'ouverture moyenne.`]] }
+    ],
+    today:`La marque continue de sortir une édition limitée tous les trois mois. Elle noue aussi de nouvelles collaborations, en B2B comme avec des artistes.`,
+    emile:`Univers de marque, identité visuelle, ligne éditoriale, boutique en ligne et direction artistique photo`, team:[] },
+
+  { id:'laseve', name:'La Sève', url:'https://substack.com/@jeremiesicsic', urlLabel:'La Sève sur Substack',
+    accroche:`Keenest voulait une newsletter. Nous avons créé un média d'auteur, et l'atelier pour le faire vivre.`,
+    fiche:{ secteur:`Média éditorial sur l'épargne, pour Keenest`, annee:'2026', collab:'Head of brand à temps partagé' },
+    depart:`Keenest voulait une newsletter didactique sur l'épargne. Le risque : une newsletter de marque de plus, difficile à nourrir et vite oubliée. J'ai proposé un autre pari : un média d'auteur.`,
+    steps:[
+      { s:'s1', note:`Une demande de newsletter recadrée en média d'auteur, signé par le fondateur et assumé par la marque.`,
+        intro:`Tout le travail de stratégie a porté sur un équilibre : la conviction d'un fondateur, sans jamais masquer d'où elle vient.`,
+        checks:[
+          [`Un média d'auteur plutôt qu'une newsletter de marque.`,`Une newsletter de marque de plus aurait été difficile à nourrir et vite oubliée.`],
+          ['Une voix incarnée, une transparence totale.',`Jérémie, fondateur de Keenest, publie La Sève en son nom sur Substack. La marque reste visible : La Sève by Keenest.`],
+          ['Un nom qui dit le sujet sans le nommer.',`La sève circule sans qu'on la voie et fait tout pousser, comme l'épargne. Sa promesse : « Sous l'écorce de ton épargne ».`]
+        ] },
+      { s:'s2', note:`Une identité tirée du vivant, puis un atelier d'écriture et un studio visuel installés dans Claude.`,
+        intro:`Tout est parti d'une esquisse sur papier, devenue logotype puis univers complet dans Figma.`,
+        checks:[
+          ['La goutte dans le S.',`Un lettrage qui fait écho à celui de Keenest, et une palette tirée du vivant.`],
+          [`Un atelier d'écriture dans Claude.`,`Des skills construites par Hugo avec Jérémie transforment une note vocale en premier jet, dans la ligne éditoriale.`],
+          ['Un studio visuel dans Claude.',`Bannières, partages LinkedIn, chiffres clés, carrousels, petites animations : quelques images suffisent pour toute une déclinaison.`],
+          ['Les règles de marque vivent dans l\'outil.',`Le champ source est obligatoire : un chiffre sans source ne s'exporte pas.`]
+        ] },
+      { s:'s3', note:`Deux numéros publiés, le troisième déjà prêt, et 460 abonnés en deux semaines.`,
+        intro:`L'outil enlève la page blanche. La plume reste celle du fondateur.`,
+        checks:[
+          ['Une note vocale, un premier jet, une signature.',`Jérémie donne son idée sans se soucier de la forme, retravaille le premier jet, puis signe. Le texte publié reste le sien.`],
+          ['Des sources dans chaque numéro.',`Chaque chiffre renvoie à une source fiable.`],
+          ['Une newsletter et ses déclinaisons.',`Publiée sur Substack, déclinée en visuels prêts à publier sur LinkedIn.`]
+        ] }
+    ],
+    stats:[['460','abonnés en deux semaines'],['2','numéros publiés, le troisième déjà prêt']],
+    today:`Un accueil porté par des voix du secteur, dont Guillaume, du Plongeoir. On ne court plus après le contenu : on en a toujours sous le coude. Et demain, La Sève peut s'exprimer ailleurs : le nom et le concept ont été pensés pour accueillir d'autres formats.`,
+    emile:`Head of brand : recadrage de la demande, équilibre de signature, nom, concept, direction artistique et studio visuel`,
+    team:[['hugo',`Content strategist : cadre éditorial, skills d'écriture construites avec Jérémie, fiabilité des sources`,'s2']] }
+];
+
+/* ---------- maillage : tout se calcule ici ---------- */
+const svc = (id) => SERVICES.find(s => s.id === id);
+const prj = (id) => PROJECTS.find(p => p.id === id);
+const who = (id) => PEOPLE.find(x => x.id === id);
+const stepOf = (p, sid) => p.steps.find(x => x.s === sid);
+const projectsOf = (sid) => PROJECTS.filter(p => stepOf(p, sid));
+const peopleOf = (sid) => PEOPLE.filter(x => x.eco && PROJECTS.some(p => p.team.some(t => t[0] === x.id && t[2] === sid)));
+const projectsWith = (pid) => PROJECTS.filter(p => p.team.some(t => t[0] === pid));
+const neighbours = (p) => PROJECTS.filter(o => o.id !== p.id)
+  .map(o => ({ o, shared: o.steps.filter(x => stepOf(p, x.s)).length }))
+  .filter(x => x.shared).sort((a, b) => b.shared - a.shared).slice(0, 2).map(x => x.o);
+
+/* ---------- briques ---------- */
+/* Films Vimeo : une image d'attente, le lecteur ne se charge qu'au clic. */
+const VIMEO = { showreel:'1247208967', aubleu:'1245104862', offn:'1233726741', laseve:'1246563839', keenest:'1141151240', labs214:'1118756791', 'offre-hovra':'1245104862', 'offre-infuse':'1247263145', 'offre-hugo':'1246563839' };
+let NOFRAME = false;
+const vsrc = (id, q) => `https://player.vimeo.com/video/${id}?${q}title=0&byline=0&portrait=0&dnt=1`;
+const blockedLink = () => `<p class="blocked">Le lecteur Vimeo ne s'affiche pas dans l'aperçu Claude. Il apparaît sur le site en ligne.</p>`;
+const film = (key, slot, label, ratio) => {
+  const id = VIMEO[key];
+  if (!id) return pic(slot, 'visuel principal ou film', '', true);
+  return `<div class="vid"${ratio ? ` style="aspect-ratio:${ratio}"` : ''}>${NOFRAME ? blockedLink() : `<iframe src="${vsrc(id, 'autopause=0&')}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Film ${label}"></iframe>`}</div>`;
+};
+const sLink = (s) => `<a href="#${s.slug}">${s.name}</a>`;
+const ph = (label, cls) => `<div class="ph ${cls === 'nat' ? '' : cls || ''}">${label}</div>`;
+
+/* Images : le script de build remplit IMG (tailles, formats). VIS dit quelle image va où. */
+const IMG = /*IMG*/{"aubleu":{"w":1350,"h":1350,"ws":[800,1350]},"frame-48097557":{"w":1600,"h":1600,"ws":[800,1600]},"frame-48097558":{"w":1600,"h":1600,"ws":[800,1600]},"frame-48097559":{"w":1600,"h":1600,"ws":[800,1600]},"frame-48097560":{"w":1600,"h":1600,"ws":[800,1600]},"img-7224-copie":{"w":3024,"h":1701,"ws":[800,1600]},"keeninvestorsnight":{"w":1200,"h":675,"ws":[800,1200]},"keenletter":{"w":1800,"h":900,"ws":[800,1600]},"acceleration":{"w":1200,"h":992,"ws":[800,1200]},"amnimation-ia":{"w":2048,"h":2048,"ws":[800,1600]},"aubleu-banner":{"w":2400,"h":1350,"ws":[800,1600]},"aubleu-cdv":{"w":1350,"h":1350,"ws":[800,1350]},"aubleu-monogram":{"w":1350,"h":1350,"ws":[800,1350]},"blog-ai":{"w":1655,"h":1340,"ws":[800,1600]},"creative-as-a-service":{"w":2000,"h":2000,"ws":[800,1600]},"culture":{"w":1200,"h":992,"ws":[800,1200]},"emerger":{"w":1485,"h":1485,"ws":[800,1485]},"emerger-noir":{"w":1485,"h":1485,"ws":[800,1485]},"hovra":{"w":1125,"h":1125,"ws":[800,1125]},"humain":{"w":1200,"h":992,"ws":[800,1200]},"infuse-ia-video":{"w":900,"h":651,"ws":[800,900]},"keenest":{"w":1856,"h":2320,"ws":[800,1600]},"keenest-seo":{"w":1856,"h":1044,"ws":[800,1600]},"labs214":{"w":1284,"h":852,"ws":[800,1284]},"lnotebook":{"w":2000,"h":2000,"ws":[800,1600]},"magick":{"w":1000,"h":1000,"ws":[800,1000]},"media":{"w":885,"h":1106,"ws":[800,885]},"media-page":{"w":885,"h":1104,"ws":[800,885]},"media-page-square":{"w":1171,"h":1170,"ws":[800,1171]},"offn":{"w":1484,"h":1484,"ws":[800,1484]},"offn-icono":{"w":1920,"h":1080,"ws":[800,1600]},"offn-icono-2":{"w":1080,"h":1080,"ws":[800,1080]},"offn-on":{"w":1920,"h":1080,"ws":[800,1600]},"osd-morph00090892":{"w":921,"h":920,"ws":[800,921]},"ouibisafe":{"w":2338,"h":1312,"ws":[800,1600]},"refonte-de-marque":{"w":1500,"h":1500,"ws":[800,1500]},"seo-media":{"w":1800,"h":1005,"ws":[800,1600]},"seo-pict":{"w":1200,"h":630,"ws":[800,1200]},"emile-portrait":{"w":984,"h":984,"ws":[480,984]},"infuse-logo":{"w":1350,"h":1350,"ws":[480,960]},"hugo-portrait":{"w":885,"h":885,"ws":[480,885]},"louana-portrait":{"w":1500,"h":1500,"ws":[480,960]},"morgane-portrait":{"w":1500,"h":1500,"ws":[480,960]},"justa-logo":{"w":560,"h":560,"ws":[480,560]},"lcarnet-banner":{"w":1500,"h":1000,"ws":[800,1500]},"lcarnet-soigner":{"w":2048,"h":2732,"ws":[800,1600]},"lcarnet-produire":{"w":4072,"h":3851,"ws":[800,1600]},"labs214-imaginer":{"w":1600,"h":900,"ws":[800,1600]},"labs214-soigner":{"w":1600,"h":1200,"ws":[800,1600]},"labs214-soigner-2":{"w":1600,"h":1200,"ws":[800,1600]},"labs214-produire":{"w":1600,"h":1200,"ws":[800,1600]},"aubleu-hero":{"w":1600,"h":900,"ws":[800,1600]},"aubleu-logo":{"w":1350,"h":1350,"ws":[800,1350]},"aubleu-mono":{"w":1350,"h":1350,"ws":[800,1350]},"aubleu-cartes":{"w":1350,"h":1350,"ws":[800,1350]},"keenest-home":{"w":1600,"h":1200,"ws":[800,1600]},"keenest-enthousiasme":{"w":1194,"h":1193,"ws":[800,1194]},"keenest-arc":{"w":1600,"h":2000,"ws":[800,1600]},"keenest-verre":{"w":1600,"h":1067,"ws":[800,1600]},"keenest-mobile":{"w":1600,"h":1600,"ws":[800,1600]},"keenest-clubs":{"w":1600,"h":1600,"ws":[800,1600]},"keenest-keenletter":{"w":1600,"h":800,"ws":[800,1600]},"keenest-hexa":{"w":1600,"h":900,"ws":[800,1600]},"keenest-hexa-club":{"w":1108,"h":1624,"ws":[800,1108]},"laseve-0":{"w":1080,"h":1080,"ws":[800,1080]},"laseve-1":{"w":1600,"h":1600,"ws":[800,1600]},"laseve-2":{"w":1600,"h":1600,"ws":[800,1600]},"laseve-carrousel-1":{"w":1080,"h":1350,"ws":[800,1080]},"laseve-carrousel-3":{"w":1080,"h":1350,"ws":[800,1080]},"laseve-substack":{"w":1600,"h":2133,"ws":[800,1600]},"laseve-flux":{"w":1024,"h":1024,"ws":[800,1024]},"laseve-flux-2":{"w":1024,"h":1024,"ws":[800,1024]},"offn-logotype":{"w":1600,"h":900,"ws":[800,1600]},"offn-texture":{"w":1600,"h":900,"ws":[800,1600]},"offn-texture-2":{"w":1600,"h":900,"ws":[800,1600]},"evera-hero":{"w":1600,"h":900,"ws":[800,1600]},"evera-dispo":{"w":978,"h":986,"ws":[800,978]},"evera-mobile":{"w":1600,"h":1600,"ws":[800,1600]},"evera-logo":{"w":850,"h":850,"ws":[850],"anim":true},"laseve-cover":{"w":1600,"h":1302,"ws":[800,1600]},"laseve-esquisse":{"w":1600,"h":1311,"ws":[800,1600]},"offn-favicon":{"w":69,"h":67,"ws":[69],"svg":"img/offn-favicon.svg","bg":"#2e2d2d"},"laseve-flux-3":{"w":1024,"h":1024,"ws":[800,1024]},"laseve-flux-4":{"w":1024,"h":1024,"ws":[800,1024]}}/*END*/;
+const VIS = {
+  'home:portrait':'emile-portrait', 
+  'person:infuse':'infuse-logo', 'person:hugo':'hugo-portrait', 'person:louana':'louana-portrait', 'person:brandon':'justa-logo', 'person:morgane':'morgane-portrait',
+  'hero:keenest':'keenest-home', 'card:keenest':'keenest-arc', 'step:keenest:s1':['keenest-enthousiasme','keenest-arc'], 'step:keenest:s2':['keenest-hexa','keenest-clubs','keenest-home'], 'step:keenest:s3':['keenest-verre','keenest-mobile','keenest-keenletter'],
+  'hero:labs214':'labs214', 'step:labs214:s1':'labs214-imaginer', 'step:labs214:s2':['labs214-soigner','labs214-soigner-2'], 'step:labs214:s3':'labs214-produire',
+  'hero:offn':'offn-on', 'step:offn:s1':['offn-favicon','offn-on','offn-logotype'], 'step:offn:s2':['offn','offn-texture','offn-texture-2'],
+  'hero:lcarnet':'lcarnet-banner', 'step:lcarnet:s2':'lcarnet-soigner', 'step:lcarnet:s3':'lcarnet-produire',
+  'hero:aubleu':'aubleu-hero', 'step:aubleu:s1':'aubleu-logo', 'step:aubleu:s2':['aubleu-mono','aubleu-hero'], 'step:aubleu:s3':'aubleu-cartes',
+  'card:laseve':'laseve-cover', 'card:offn':'offn-logotype', 'step:laseve:s1':['laseve-esquisse','laseve-0'], 'step:laseve:s2':['laseve-flux-3','laseve-flux-4'], 'step:laseve:s3':['laseve-substack','laseve-carrousel-1','laseve-carrousel-3','laseve-2'],
+  'hero:evera':'evera-hero', 'step:evera:s1':'evera-dispo', 'step:evera:s2':['evera-logo','evera-mobile']
+};
+const pic = (slot, label, cls, eager) => {
+  const v = VIS[slot] || (slot.startsWith('card:') ? VIS['hero:' + slot.slice(5)] : null);
+  if (Array.isArray(v)) return v.map(k => picK(k, label, cls, eager)).join('');
+  return picK(v, label, cls, eager);
+};
+const picK = (k, label, cls, eager) => {
+  const m = k && IMG[k];
+  if (!m) return ph(label, cls);
+  const set = (ext) => m.ws.map(w => `img/${k}-${w}.${ext} ${w}w`).join(', ');
+  if (m.svg) return `<div class="pic sq logo" style="background:${m.bg};max-width:320px"><img src="${m.svg}" alt="${label}" loading="lazy"></div>`;
+  if (m.anim) return `<picture class="pic ${cls || ''}"><img src="img/${k}-${m.ws[0]}.webp" width="${m.w}" height="${m.h}" alt="${label}" ${eager ? '' : 'loading="lazy"'} decoding="async"></picture>`;
+  const big = m.ws[m.ws.length - 1];
+  const sizes = cls === 'tall' ? '(min-width:760px) 50vw, 100vw' : '100vw';
+  return `<picture class="pic ${cls || ''}"><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img src="img/${k}-${big}.webp" width="${m.w}" height="${m.h}" alt="${label}" ${eager ? '' : 'loading="lazy"'} decoding="async"></picture>`;
+};
+const checks = (list) => `<div class="rows">${list.map(([b, t]) => `<div class="row"><b>${b}</b><p>${t || ''}</p></div>`).join('')}</div>`;
+const numbered = (list) => `<div class="rows">${list.map(([b, t], i) => `<div class="row n"><span class="soft">${i + 1}</span><b>${b}</b><p>${t}</p></div>`).join('')}</div>`;
+const card = (p, note) => `
+  <article class="card">
+    <a class="ph-link" href="#projet-${p.id}" aria-label="milit for ${p.name}">${pic('card:' + p.id, 'visuel ' + p.name, 'tall')}</a>
+    <h3><a href="#projet-${p.id}">milit for ${p.name}</a></h3>
+    <p class="soft measure">${note || p.accroche}</p>
+    <div class="links">${p.steps.map(x => sLink(svc(x.s))).join('')}</div>
+  </article>`;
+const cta = (p) => `
+  <section class="wrap sec">
+    <p class="m">Pas une présentation commerciale : un échange sur votre vision et ce qui mérite d'être soigné.</p>
+    <p><a class="big" href="#contact">Commençons par une conversation.</a></p>
+    ${p && p.url ? `<p class="soft">Voir le projet en vrai : <a href="${p.url}">${p.urlLabel}</a></p>` : ''}
+  </section>`;
+
+/* ---------- pages ---------- */
+function pageHome(){
+  const feat = ['laseve','offn','evera','keenest'].map(prj);
+  return `
+  <section class="stage" id="stage">
+    <div class="pin" id="pin">
+      <video class="logo3d" id="logo3d" muted loop playsinline autoplay preload="auto" poster="media/logo-poster.webp" aria-hidden="true">
+        <source src="media/logo-loop.webm" type="video/webm"><source src="media/logo-loop.mp4" type="video/mp4">
+      </video>
+      <div class="wrap heroin" id="heroin">
+        <h1><span>Qui prétend faire</span><span>une marque sans</span><span>prendre position ?</span></h1>
+        <div class="who">
+          ${pic('home:portrait', 'Emile Londero', '', true)}
+          <div class="stack">
+            <p>Head of brand à temps partagé. Je travaille en direct avec les associés pour poser les fondamentaux de la marque, imaginer des dispositifs créatifs et rendre l'équipe autonome.</p>
+            <p>${SERVICES.map(sLink).join(', ')}.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reel" id="reel">Showreel milit</div>
+    </div>
+  </section>
+  <section class="wrap sec">
+    <div class="cols"><h2 class="l">Réalisations</h2><p class="soft"><a href="#projets" data-nav="projets">Toutes les réalisations</a></p></div>
+    <div class="cards">${feat.map(p => card(p)).join('')}</div>
+  </section>
+  ${cta()}`;
+}
+
+/* Hero : le manifeste s'efface, le showreel monte et prend l'écran, puis la page continue. */
+function heroUpdate(){
+  const stage = document.getElementById('stage');
+  if (!stage || !stage.getBoundingClientRect) return;
+  const reel = document.getElementById('reel');
+  const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const loadReel = (q) => { if (reel.dataset.loaded) return; reel.dataset.loaded = '1'; reel.innerHTML = NOFRAME ? blockedLink() : `<iframe src="${vsrc(VIMEO.showreel, 'autopause=0&' + q)}" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Milit showreel"></iframe>`; };
+  if (still){ loadReel(''); return; }
+  const pin = document.getElementById('pin'), hero = document.getElementById('heroin'), logo = document.getElementById('logo3d');
+  const r = stage.getBoundingClientRect(), H = pin.clientHeight, span = Math.max(1, r.height - H);
+  const p = Math.min(1, Math.max(0, (60 - r.top) / span));
+  if (p > 0.03) loadReel('autoplay=1&muted=1&loop=1&');
+  const q0 = Math.min(1, p / 0.78), q = 1 - Math.pow(1 - q0, 3);
+  const s = 0.5 + 0.5 * q, startY = H / 2 + reel.offsetHeight * 0.25 + 24;
+  const tx = -0.17 * window.innerWidth * (1 - q), ty = startY * (1 - q);
+  reel.style.transform = `translate(-50%,-50%) translate(${tx}px,${ty}px) scale(${s})`;
+  const f = Math.max(0, 1 - p / 0.42);
+  hero.style.opacity = f; hero.style.transform = `translateY(${-48 * (1 - f)}px)`;
+  logo.style.opacity = f;
+}
+let heroTick = false;
+window.addEventListener('scroll', () => { if (heroTick) return; heroTick = true; requestAnimationFrame(() => { heroTick = false; heroUpdate(); }); }, { passive: true });
+window.addEventListener('resize', heroUpdate);
+
+function pageServices(){
+  return `
+  <section class="wrap top">
+    <h1 class="xl">Soigner la source, générer le flux.</h1>
+    <p class="m">Trois temps, un seul système. Je pars de la source créative, je lui donne une forme, puis je la fais produire. Chaque temps peut se prendre seul. En head of brand à temps partagé, je les tiens tous les trois dans la durée.</p>
+  </section>
+  <section class="wrap sec">
+    <div class="rows">
+      ${SERVICES.map(s => `<a class="temps" href="#${s.slug}">
+        <img class="tg ${s.glyph}" src="img/glyph-${s.glyph}.svg" alt="" style="--gw:${s.gw}" width="${s.gw}" height="${s.gh}">
+        <span class="l k">${s.n}</span>
+        <h2 class="l">${s.name}</h2>
+        <div class="stack" style="gap:12px"><p>${s.thesis}</p></div>
+      </a>`).join('')}
+    </div>
+  </section>
+  <section class="wrap sec">
+    <div class="cols">
+      <h2 class="l">Head of brand à temps partagé</h2>
+      <div class="stack">
+        <p class="m">Je travaille en direct avec les associés, je nourris les bibliothèques et je veille à ce que rien ne dérive. Je tiens ce rôle pour trois marques maximum.</p>
+        <p class="soft">Le triptyque complet à l'œuvre : <a href="#projet-keenest">milit for Keenest</a>. Et pour les formats qui vont plus loin, <a href="#ecosysteme">l'écosystème</a>.</p>
+      </div>
+    </div>
+    ${film('keenest', 'hero:keenest', 'Keenest')}
+  </section>
+  <section class="wrap sec">
+    <div class="cols"><h2 class="l">Trois offres à plusieurs</h2>
+      <p class="m">Quand le projet demande plus qu'une paire de mains, je porte l'offre avec un partenaire de l'écosystème.</p></div>
+    <div class="offers">
+      ${OFFERS.map(o => { const x = PEOPLE.find(q => q.id === o.film.replace('offre-', '')) || {}; return `
+      <a class="offer" href="#ecosysteme">
+        ${x.svg ? `<div class="pic sq logo" style="background:${x.bg}"><img src="${x.svg}" alt="logo ${x.name}" loading="lazy"></div>` : pic('person:' + x.id, x.name || o.name, 'sq')}
+        <b>${o.name}</b>
+        <p class="soft">${o.withLabel}. ${o.thesis}</p>
+      </a>`; }).join('')}
+    </div>
+    <p><a class="big" href="#ecosysteme">Découvrir l'écosystème</a></p>
+  </section>
+  ${cta()}`;
+}
+
+function pageService(s){
+  const linked = projectsOf(s.id);
+  const people = peopleOf(s.id);
+  const i = SERVICES.indexOf(s);
+  const next = SERVICES[i + 1];
+  return `
+  <section class="wrap shero">
+    <img class="sg" src="img/glyph-${s.glyph}.svg" alt="" style="--gw:${s.gw}" width="${s.gw}" height="${s.gh}">
+    <p class="soft"><a href="#services">services</a>, temps ${s.n} sur 3</p>
+    <h1 class="xl">${s.name}</h1>
+    <p class="m" style="font-weight:600">${s.thesis}</p>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><p class="soft">Le constat</p><p class="m">${s.constat}</p></div>
+    <div class="cols"><p class="soft">${s.doLabel}</p>${numbered(s.items)}</div>
+    <div class="cols"><p class="soft">Ce qui reste</p><p class="measure">${s.reste}</p></div>
+    <div class="cols"><p class="soft">La preuve</p><p class="measure">${s.preuve}</p></div>
+    <div class="cols"><p class="soft">Avec qui</p>
+      ${people.length
+        ? `<p class="measure">Sur ce temps, j'invite selon le projet : ${people.map(x => `<a href="#ecosysteme">${x.name}</a>`).join(', ')}.</p>`
+        : `<p class="measure">Personne d'autre. Ce temps se joue entre les associés et moi.</p>`}
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><h2 class="l">Ce temps dans les projets</h2>
+      <p class="soft"><a href="#projets" data-filter="${s.id}">Voir dans les réalisations</a></p></div>
+    <div class="cards">${linked.map(p => card(p, stepOf(p, s.id).note)).join('')}</div>
+  </section>
+
+  <section class="wrap sec">
+    <p class="m">${s.ensuite}</p>
+    <p>${next
+      ? `<a class="big" href="#${next.slug}">${next.n}. ${next.name}</a>`
+      : `<a class="big" href="#ecosysteme">L'écosystème</a>`}</p>
+  </section>
+  ${cta()}`;
+}
+
+let FILTER = null;
+function pageProjects(){
+  const list = FILTER ? projectsOf(FILTER) : PROJECTS;
+  return `
+  <section class="wrap top">
+    <h1 class="xl">Réalisations</h1>
+    <div class="filter" role="group" aria-label="Filtrer par temps">
+      <button type="button" id="f-all" data-f="" aria-pressed="${!FILTER}">Tout</button>
+      ${SERVICES.map(s => `<button type="button" id="f-${s.id}" data-f="${s.id}" aria-pressed="${FILTER === s.id}">${s.name}</button>`).join('')}
+    </div>
+    ${FILTER ? `<p class="soft measure">${svc(FILTER).thesis} <a href="#${svc(FILTER).slug}">Lire ce temps</a></p>` : ''}
+  </section>
+  <section class="wrap sec">
+    <div class="cards">${list.map(p => card(p, FILTER ? stepOf(p, FILTER).note : null)).join('')}</div>
+  </section>
+  ${cta()}`;
+}
+
+function pageProject(p){
+  const f = p.fiche;
+  const near = neighbours(p);
+  return `
+  <section class="wrap top">
+    <p class="soft"><a href="#projets">réalisations</a></p>
+    <h1 class="xl">milit for ${p.name}</h1>
+    <p class="m">${p.accroche}</p>
+    ${film(p.id, 'hero:' + p.id, p.name)}
+    <dl class="fiche">
+      <div><dt>Client</dt><dd>${p.name}</dd></div>
+      ${f.secteur ? `<div><dt>Secteur</dt><dd>${f.secteur}</dd></div>` : ''}
+      ${f.annee ? `<div><dt>Année</dt><dd>${f.annee}</dd></div>` : ''}
+      ${f.collab ? `<div><dt>Collaboration</dt><dd>${f.collab}</dd></div>` : ''}
+    </dl>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><p class="soft">Le point de départ</p><p class="m">${p.depart}</p></div>
+  </section>
+
+  ${p.steps.map(st => { const s = svc(st.s); return `
+  <section class="wrap sec">
+    <div class="cols">
+      <h2 class="l"><a href="#${s.slug}">${s.name}</a></h2>
+      <div class="stack" style="gap:28px">${st.intro ? `<p class="m">${st.intro}</p>` : ''}${checks(st.checks)}${pic('step:' + p.id + ':' + s.id, 'visuel : ' + s.name.toLowerCase(), 'nat')}</div>
+    </div>
+  </section>`; }).join('')}
+
+  <section class="wrap sec">
+    <div class="cols"><h2 class="l">Et aujourd'hui ?</h2>
+      <div class="stack" style="gap:36px">
+        ${p.stats ? `<div class="stats">${p.stats.map(([n, l]) => `<div><b>${n}</b><span class="soft">${l}</span></div>`).join('')}</div>` : ''}
+        ${p.today ? `<p class="m">${p.today}</p>` : ''}
+        ${VIS['today:' + p.id] ? pic('today:' + p.id, 'visuel : aujourd\'hui', 'nat') : ''}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cols"><p class="soft">L'équipe</p>
+      <div class="rows">
+        <div class="row"><b>Emile Londero</b><p>${p.emile}</p></div>
+        ${p.team.map(([id, role]) => `<div class="row"><b>${who(id).eco ? `<a href="#ecosysteme">${who(id).credit || who(id).name}</a>` : who(id).name}</b><p>${role}</p></div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  ${near.length ? `
+  <section class="wrap sec">
+    <h2 class="l">À voir aussi</h2>
+    <div class="cards">${near.map(o => card(o)).join('')}</div>
+  </section>` : ''}
+  ${cta(p)}`;
+}
+
+/* Contact : pas de formulaire. L'adresse n'est écrite nulle part en clair dans le code,
+   elle est assemblée à l'affichage, ce qui écarte les robots qui aspirent les pages. */
+const ADDR = () => ['emile', ['milit', 'fr'].join('.')].join(String.fromCharCode(64));
+function pageContact(){
+  return `
+  <section class="wrap top">
+    <h1 class="xl">Commençons par une conversation.</h1>
+    <p class="m">Pas une présentation commerciale : un échange sur votre vision et ce qui mérite d'être soigné.</p>
+  </section>
+  <section class="wrap sec">
+    <div class="rows">
+      <div class="row"><p>Sur LinkedIn</p><p><a class="big" href="https://fr.linkedin.com/in/emile-londero">Écrivez-moi sur LinkedIn</a></p></div>
+      <div class="row"><p>Par mail</p>
+        <div class="stack" style="gap:16px">
+          <p><a class="big" href="#contact" data-mail>Afficher l'adresse</a></p>
+          <p><button class="copy" type="button" data-copy id="copy-addr">Copier l'adresse</button> <span id="copied" role="status"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function pageLegal(){
+  return `
+  <section class="wrap top">
+    <h1 class="xl">Mentions légales</h1>
+  </section>
+  <section class="wrap sec legal stack">
+    <p>Conformément aux articles 6-III et 19 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), voici les informations relatives au site milit.fr.</p>
+    <h2>Éditeur</h2>
+    <p>Milit, SARL au capital de 3 500 euros, immatriculée au RCS de Lyon sous le numéro 850 332 677.<br>Siège social : 1 place Colbert, 69001 Lyon.<br>TVA intracommunautaire : FR87850332677.<br>Contact : <a href="#contact">page contact</a>.<br>Directeur de la publication : Emile Londero.</p>
+    <h2>Hébergeur</h2>
+    <p>GitHub, Inc.<br>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>github.com</p>
+    <h2>Accès au site</h2>
+    <p>Le site est accessible en tout endroit, 7j/7 et 24h/24, sauf cas de force majeure ou interruption liée à la maintenance. L'éditeur ne saurait être tenu responsable d'une modification, interruption ou suspension du site.</p>
+    <h2>Données personnelles</h2>
+    <p>Le site ne collecte aucune donnée personnelle : ni formulaire, ni outil de mesure d'audience, ni cookie de suivi. Les vidéos sont diffusées par Vimeo en mode « ne pas suivre ».</p>
+    <h2>Propriété intellectuelle</h2>
+    <p>Les textes, visuels, marques et vidéos présentés sur le site appartiennent à Milit ou à leurs titulaires respectifs, clients et partenaires. Toute reproduction, diffusion ou modification, totale ou partielle, sans autorisation est interdite.</p>
+  </section>`;
+}
+
+function pageEco(){
+  return `
+  <section class="wrap top">
+    <h1 class="xl">L'écosystème</h1>
+    <p class="m">Je ne travaille pas seul. Voici celles et ceux avec qui je fais équipe, selon le projet.</p>
+  </section>
+  <section class="wrap sec">
+    <div class="people">
+      ${PEOPLE.filter(x => x.eco).map(x => `
+      <div class="person">
+        ${x.svg ? `<div class="pic sq logo" style="background:${x.bg}"><img src="${x.svg}" alt="logo ${x.name}" loading="lazy"></div>` : pic('person:' + x.id, x.kind === 'logo' ? 'logo ' + x.name : 'portrait ' + x.name, 'sq')}
+        <div><b>${x.name}</b><p class="soft">${x.job}</p></div>
+      </div>`).join('')}
+    </div>
+  </section>
+  <section class="wrap sec">
+    <div class="cols"><h2 class="l">Trois offres à plusieurs</h2>
+      <p class="m">Des offres que je porte avec un partenaire, quand le projet demande plus qu'une paire de mains.</p></div>
+  </section>
+  ${OFFERS.map(o => `
+  <section class="wrap sec">
+    <div class="cols">
+      <div class="stack" style="gap:8px"><h2 class="l">${o.name}</h2><p class="soft">${o.withLabel}<br>Collaboration depuis ${o.since}</p></div>
+      <div class="stack" style="gap:28px">
+        <p class="m">${o.thesis}</p>
+        ${film(o.film, '', o.name)}
+        <p class="measure soft">${o.text}</p>
+        ${numbered(o.items)}
+        ${o.proofs ? `<div class="tbl"><table><thead><tr><th>Newsletter</th><th>Mission</th><th>Résultat</th></tr></thead><tbody>${o.proofs.map(([n, m, r, pid]) => `<tr><td>${pid ? `<a href="#projet-${pid}">${n}</a>` : n}</td><td>${m}</td><td>${r}</td></tr>`).join('')}</tbody></table></div>` : ''}
+        ${o.frontiere ? `<p class="measure">${o.frontiere}</p>` : ''}
+      </div>
+    </div>
+  </section>`).join('')}
+  ${cta()}`;
+}
+
+/* ---------- adresses : une vraie page par rubrique sur le site en ligne ---------- */
+const STATIC = !!window.__STATIC__;
+const PSLUG = { keenest:'emile-pour-keenest', labs214:'milit-for-labs214', offn:'milit-for-offn', aubleu:'milit-for-aubleu', evera:'evera', lcarnet:'milit-for-lcarnet-edition', laseve:'milit-for-la-seve' };
+const pathOf = (k) => {
+  if (!k || k === 'accueil') return '/';
+  if (k === 'services') return '/mes-services/';
+  const s = SERVICES.find(x => x.slug === k); if (s) return '/mes-services/' + k.replace('service-', '') + '/';
+  if (k.startsWith('projet-') && PSLUG[k.slice(7)]) return '/projets/' + PSLUG[k.slice(7)] + '/';
+  if (k === 'projets' || k === 'ecosysteme' || k === 'contact' || k === 'mentions-legales') return '/' + k + '/';
+  return null;
+};
+
+/* ---------- routeur : un simple #nom par page dans l'aperçu ---------- */
+const app = document.getElementById('app');
+function route(){
+  if (STATIC && !route.force){ afterRender(window.__NAV__ || ''); return; }
+  route.force = false;
+  const h = (STATIC ? window.__KEY__ : (location.hash || '').replace('#', '')) || 'accueil';
+  let html, nav = 'services', title = 'services';
+  const s = SERVICES.find(x => x.slug === h);
+  const p = h.startsWith('projet-') ? prj(h.slice(7)) : null;
+  if (s){ html = pageService(s); title = s.name; }
+  else if (p){ html = pageProject(p); nav = 'projets'; title = 'milit for ' + p.name; }
+  else if (h === 'projets'){ html = pageProjects(); nav = 'projets'; title = 'réalisations'; }
+  else if (h === 'ecosysteme'){ html = pageEco(); nav = 'ecosysteme'; title = 'écosystème'; }
+  else if (h === 'contact'){ html = pageContact(); nav = 'contact'; title = 'contact'; }
+  else if (h === 'mentions-legales'){ html = pageLegal(); nav = 'legal'; title = 'mentions légales'; }
+  else if (h === 'services'){ html = pageServices(); }
+  else { html = pageHome(); nav = ''; title = 'Emile Londero'; }
+  app.innerHTML = html;
+  if (!STATIC){ document.title = 'milit.fr · ' + title; window.scrollTo(0, 0); }
+  afterRender(nav);
+}
+function afterRender(nav){
+  if (app.classList) app.classList.toggle('home', nav === '');
+  const ml = app.querySelector && app.querySelector('[data-mail]');
+  if (ml) ml.textContent = ADDR();
+  const v = app.querySelector && app.querySelector('video');
+  if (v){ v.muted = true; if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) v.removeAttribute('autoplay'); else { const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); } }
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    if (a.dataset.nav === nav) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  heroUpdate();
+}
+document.addEventListener('securitypolicyviolation', (e) => {
+  if (!/frame/.test(e.effectiveDirective || e.violatedDirective || '')) return;
+  NOFRAME = true;
+  document.querySelectorAll('.vid iframe, .reel iframe').forEach(f => { f.outerHTML = blockedLink(); });
+});
+const burger = document.getElementById('burger');
+const setMenu = (open) => { document.body.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu'); };
+burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+window.addEventListener('hashchange', () => setMenu(false));
+document.addEventListener('click', (e) => {
+  const mail = e.target.closest('[data-mail]');
+  if (mail){ e.preventDefault(); location.href = ['mai', 'lto:'].join('') + ADDR(); return; }
+  const cp = e.target.closest('[data-copy]');
+  if (cp){ const out = document.getElementById('copied'); const done = (t) => { out.textContent = t; };
+    try { navigator.clipboard.writeText(ADDR()).then(() => done('Adresse copiée.'), () => done('Copie impossible ici, sélectionnez l\'adresse.')); } catch (err) { done('Copie impossible ici, sélectionnez l\'adresse.'); }
+    return; }
+  const b = e.target.closest('[data-f]');
+  if (b){ FILTER = b.dataset.f || null; const y = window.scrollY; route.force = true; route(); window.scrollTo(0, y); return; }
+  const l = e.target.closest('a[data-filter]');
+  if (l){ FILTER = l.dataset.filter; if (STATIC){ e.preventDefault(); location.href = '/projets/?f=' + FILTER; } return; }
+  const n = e.target.closest('a[data-nav]');
+  if (n && n.dataset.nav === 'projets') FILTER = null;
+  const a = STATIC && e.target.closest('a[href^="#"]');
+  if (a){ const to = pathOf(a.getAttribute('href').slice(1)); if (to){ e.preventDefault(); location.href = to; } }
+});
+if (!STATIC) window.addEventListener('hashchange', route);
+if (STATIC && window.__KEY__ === 'projets'){ const f = new URLSearchParams(location.search).get('f'); if (SERVICES.some(s => s.id === f)){ FILTER = f; route.force = true; } }
+route();
+</script>
+</body>
+</html>
