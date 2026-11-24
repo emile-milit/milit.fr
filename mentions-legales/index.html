@@ -194,6 +194,7 @@ a.ph-link:hover .ph,a.ph-link:hover .pic{transform:scale(1.02)}
 .temoin figcaption{display:flex;align-items:center;gap:16px;font-size:16px;line-height:1.35}
 .temoin figcaption .pic{width:64px;aspect-ratio:1;border-radius:50%;flex:none}
 .temoin figcaption > span{display:flex;flex-direction:column}
+.tstat b{color:var(--text);font-weight:600}
 </style>
 </head>
 <body>
@@ -264,6 +265,7 @@ const SERVICES = [
       ['Le naming',`Un nom né de la vision des associés, testé contre ce que les IA proposent sur le même brief. S'il aurait pu sortir d'un prompt, on le jette.`]
     ],
     reste:`Une position claire et des idées qui n'appartiennent qu'à vous. Sur ce temps, je travaille seul, en direct avec les associés.`,
+    stats:[['7','marques positionnées avec leurs fondateurs en 2026'],['12','noms créés, toujours utilisés aujourd\'hui']],
     preuve:`Pour <a href="#projet-evera">Evera</a>, j'ai challengé le brief et étudié le marché avant de chercher un nom. Le positionnement « électrique d'abord » restait le vrai différenciant : le nom en découle.`,
     ensuite:`Une idée positionnée attend sa forme.` },
 
@@ -280,6 +282,7 @@ const SERVICES = [
       ['Les gabarits de génération',`Prêts pour Claude Design, pour produire juste dès le premier jet.`]
     ],
     reste:`Des assets créés une fois, avec exigence, qui travaillent pendant des années. Et deux bibliothèques vivantes que l'équipe utilise sans y penser, et que je nourris en continu.`,
+    stats:[['9','marques créées ou refondues en 2026']],
     preuve:`Chez <a href="#projet-keenest">Keenest</a>, le fondateur a collé son brief dans Claude Design au lieu de me l'envoyer. Deux heures plus tard, il avait une vidéo juste. Et c'est moi qui lui faisais des retours.`,
     ensuite:`La marque est en place. Reste à décider ce qu'elle va dire, et à quel rythme.` },
 
@@ -294,6 +297,7 @@ const SERVICES = [
       ['Générer',`L'équipe prend le relais. Le format tourne, la qualité tient.`]
     ],
     reste:`Un format qui tourne sans goulot d'étranglement, et une base plus solide pour le suivant. Produire vite ne veut pas dire produire tout le temps : chaque format doit être utile à sa communauté.`,
+    stats:[['3','équipes qui produisent seules, dans leur charte, en 2026']],
     preuve:`La newsletter des campagnes <a href="#projet-keenest">Keenest</a> : écrite à la main jusqu'à trouver son ton, produite aujourd'hui en autonomie par l'équipe, avec 42 % d'ouverture moyenne.`,
     ensuite:`Certains formats méritent d'aller plus loin : un film, un vrai média. C'est là que l'écosystème entre en jeu.` }
 ];
@@ -640,7 +644,7 @@ function pageServices(){
         <img class="tg ${s.glyph}" src="img/glyph-${s.glyph}.svg" alt="" style="--gw:${s.gw}" width="${s.gw}" height="${s.gh}">
         <span class="l k">${s.n}</span>
         <h2 class="l">${s.name}</h2>
-        <div class="stack" style="gap:12px"><p>${s.thesis}</p></div>
+        <div class="stack" style="gap:12px"><p>${s.thesis}</p>${s.stats ? `<p class="soft tstat"><b>${s.stats[0][0]}</b> ${s.stats[0][1]}</p>` : ''}</div>
       </a>`).join('')}
     </div>
   </section>
@@ -687,6 +691,7 @@ function pageService(s){
     <div class="cols"><p class="soft">Le constat</p><p class="m">${s.constat}</p></div>
     <div class="cols"><p class="soft">${s.doLabel}</p>${numbered(s.items)}</div>
     <div class="cols"><p class="soft">Ce qui reste</p><p class="measure">${s.reste}</p></div>
+    ${s.stats ? `<div class="cols"><p class="soft">En chiffres</p><div class="stats">${s.stats.map(([n, l]) => `<div><b>${n}</b><span class="soft">${l}</span></div>`).join('')}</div></div>` : ''}
     <div class="cols"><p class="soft">La preuve</p><p class="measure">${s.preuve}</p></div>
     <div class="cols"><p class="soft">Avec qui</p>
       ${people.length
