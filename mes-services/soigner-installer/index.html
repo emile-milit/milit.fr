@@ -187,6 +187,13 @@ a.ph-link:hover .ph,a.ph-link:hover .pic{transform:scale(1.02)}
 .reel{position:absolute;z-index:2;left:50%;top:50%;width:min(92vw,calc((100svh - 108px)*1.711));aspect-ratio:10000/5844;background:#D6D6D6;color:#0A0A0A;display:grid;place-items:center;font-size:clamp(22px,5vw,76px);letter-spacing:-.02em;transform:translate(-50%,120vh);will-change:transform}
 @media (prefers-reduced-motion:reduce){.stage{height:auto}.pin{position:static;height:auto;display:block;padding:48px 0}.reel{position:static;transform:none!important;margin:56px auto 0}.heroin{opacity:1!important;transform:none!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.noms .cols{align-items:end}
+.noms .xl{font-weight:600;white-space:nowrap}
+.temoin{display:grid;gap:28px;max-width:980px;margin:0}
+.temoin blockquote{margin:0;font-size:clamp(22px,2.8vw,36px);line-height:1.25;letter-spacing:-.015em;text-wrap:pretty}
+.temoin figcaption{display:flex;align-items:center;gap:16px;font-size:16px;line-height:1.35}
+.temoin figcaption .pic{width:64px;aspect-ratio:1;border-radius:50%;flex:none}
+.temoin figcaption > span{display:flex;flex-direction:column}
 </style>
 </head>
 <body>
@@ -639,9 +646,19 @@ function pageHome(){
       <div class="reel" id="reel">Showreel milit</div>
     </div>
   </section>
+  <section class="wrap sec noms">
+    <div class="cols"><b class="xl">12 noms</b><p class="m">créés pour des marques qui les portent toujours aujourd'hui. Le nom, puis l'identité qui va avec.</p></div>
+    <picture class="pic nat"><source type="image/avif" srcset="img/noms-crees-800.avif 800w, img/noms-crees-1600.avif 1600w, img/noms-crees-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="img/noms-crees-800.webp 800w, img/noms-crees-1600.webp 1600w, img/noms-crees-2000.webp 2000w" sizes="100vw"><img src="img/noms-crees-1600.webp" width="2000" height="920" alt="Logotypes des 12 noms créés : Stenup, Keenest, Evera, Prim, Devaran, Aubleu, Les Convives, Wemea, Offn, Uneat, Attain, La Sève" loading="lazy" decoding="async"></picture>
+  </section>
   <section class="wrap sec">
     <div class="cols"><h2 class="l">Réalisations</h2><p class="soft"><a href="#projets" data-nav="projets">Toutes les réalisations</a></p></div>
     <div class="cards">${feat.map(p => card(p)).join('')}</div>
+  </section>
+  <section class="wrap sec">
+    <figure class="temoin">
+      <blockquote>« L'avantage avec Emile, c'est qu'il est possible de s'exprimer sans le froisser, qu'il comprend vite et s'adapte parfaitement. Il traite les besoins et les intérêts de ses clients comme si c'étaient les siens. C'est donc un plaisir de les lui confier ! »</blockquote>
+      <figcaption><picture class="pic"><source type="image/avif" srcset="img/justine-portrait-160.avif 160w, img/justine-portrait-297.avif 297w" sizes="64px"><source type="image/webp" srcset="img/justine-portrait-160.webp 160w, img/justine-portrait-297.webp 297w" sizes="64px"><img src="img/justine-portrait-160.webp" width="160" height="160" alt="Justine Petit-Bramon" loading="lazy" decoding="async"></picture><span><b>Justine Petit-Bramon</b><span class="soft">Fondatrice de Wide</span></span></figcaption>
+    </figure>
   </section>
   ${cta()}`;
 }
