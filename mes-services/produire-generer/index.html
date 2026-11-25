@@ -189,12 +189,17 @@ a.ph-link:hover .ph,a.ph-link:hover .pic{transform:scale(1.02)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .noms .cols{align-items:end}
 .noms .xl{font-weight:600;white-space:nowrap}
-.temoin{display:grid;gap:28px;max-width:980px;margin:0}
-.temoin blockquote{margin:0;font-size:clamp(22px,2.8vw,36px);line-height:1.25;letter-spacing:-.015em;text-wrap:pretty}
-.temoin figcaption{display:flex;align-items:center;gap:16px;font-size:16px;line-height:1.35}
-.temoin figcaption .pic{width:64px;aspect-ratio:1;border-radius:50%;flex:none}
-.temoin figcaption > span{display:flex;flex-direction:column}
 .tstat b{color:var(--text);font-weight:600}
+.tm-nav{display:flex;gap:8px;justify-content:flex-end;align-self:end}
+.tm-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--text);font:inherit;font-size:20px;line-height:1;cursor:pointer;transition:border-color .2s var(--ease)}
+.tm-nav button:hover{border-color:var(--text)}
+.tm-track{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,980px);gap:40px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.tm-track::-webkit-scrollbar{display:none}
+.tm{margin:0;scroll-snap-align:start;display:grid;gap:24px;align-content:start}
+.tm .pic{aspect-ratio:3/4;width:100%;max-width:220px}
+@media (min-width:760px){.tm{grid-template-columns:300px minmax(0,1fr);gap:48px;align-items:end}.tm .pic{max-width:300px}}
+.tm blockquote{margin:0 0 24px;font-size:clamp(21px,2.4vw,32px);line-height:1.25;letter-spacing:-.015em;text-wrap:pretty}
+.tm figcaption{display:flex;flex-direction:column;font-size:16px;line-height:1.35}
 </style>
 </head>
 <body>
@@ -647,11 +652,9 @@ function pageHome(){
     <div class="cols"><h2 class="l">Réalisations</h2><p class="soft"><a href="#projets" data-nav="projets">Toutes les réalisations</a></p></div>
     <div class="cards">${feat.map(p => card(p)).join('')}</div>
   </section>
-  <section class="wrap sec">
-    <figure class="temoin">
-      <blockquote>« L'avantage avec Emile, c'est qu'il est possible de s'exprimer sans le froisser, qu'il comprend vite et s'adapte parfaitement. Il traite les besoins et les intérêts de ses clients comme si c'étaient les siens. C'est donc un plaisir de les lui confier ! »</blockquote>
-      <figcaption><picture class="pic"><source type="image/avif" srcset="img/justine-portrait-160.avif 160w, img/justine-portrait-297.avif 297w" sizes="64px"><source type="image/webp" srcset="img/justine-portrait-160.webp 160w, img/justine-portrait-297.webp 297w" sizes="64px"><img src="img/justine-portrait-160.webp" width="160" height="160" alt="Justine Petit-Bramon" loading="lazy" decoding="async"></picture><span><b>Justine Petit-Bramon</b><span class="soft">Fondatrice de Wide</span></span></figcaption>
-    </figure>
+  <section class="wrap sec temoins" aria-label="Témoignages">
+    <div class="cols"><h2 class="l">Ce qu'en disent les fondateurs</h2><div class="tm-nav"><button type="button" data-tm="-1" aria-label="Témoignage précédent">←</button><button type="button" data-tm="1" aria-label="Témoignage suivant">→</button></div></div>
+    <div class="tm-track" tabindex="0"><figure class="tm"><picture class="pic"><source type="image/avif" srcset="img/temoin-jeremie-sicsic-300.avif 300w, img/temoin-jeremie-sicsic-480.avif 480w" sizes="(min-width:760px) 300px, 220px"><source type="image/webp" srcset="img/temoin-jeremie-sicsic-300.webp 300w, img/temoin-jeremie-sicsic-480.webp 480w" sizes="(min-width:760px) 300px, 220px"><img src="img/temoin-jeremie-sicsic-480.webp" width="480" height="640" alt="Jérémie Sicsic" loading="lazy" decoding="async"></picture><div class="tm-body"><blockquote>«&nbsp;Emile a créé notre nom, notre identité, puis un brand system que l'équipe fait tourner seule. Aujourd'hui, on produit du contenu quali à une vitesse folle sans sortir de notre charte&nbsp;!&nbsp;»</blockquote><figcaption><b>Jérémie Sicsic</b><span class="soft">Fondateur de Keenest</span></figcaption></div></figure><figure class="tm"><picture class="pic"><source type="image/avif" srcset="img/temoin-lcarnet-edition-300.avif 300w, img/temoin-lcarnet-edition-480.avif 480w" sizes="(min-width:760px) 300px, 220px"><source type="image/webp" srcset="img/temoin-lcarnet-edition-300.webp 300w, img/temoin-lcarnet-edition-480.webp 480w" sizes="(min-width:760px) 300px, 220px"><img src="img/temoin-lcarnet-edition-480.webp" width="480" height="640" alt="Loïc & Laurence" loading="lazy" decoding="async"></picture><div class="tm-body"><blockquote>«&nbsp;Il a compris notre projet avant de dessiner quoi que ce soit. Le résultat nous ressemble, et on le fait vivre nous-mêmes, de l'atelier à la boutique.&nbsp;»</blockquote><figcaption><b>Loïc & Laurence</b><span class="soft">Fondateurs de L'Carnet Édition</span></figcaption></div></figure><figure class="tm"><picture class="pic"><source type="image/avif" srcset="img/temoin-jules-ferrer-300.avif 300w, img/temoin-jules-ferrer-480.avif 480w" sizes="(min-width:760px) 300px, 220px"><source type="image/webp" srcset="img/temoin-jules-ferrer-300.webp 300w, img/temoin-jules-ferrer-480.webp 480w" sizes="(min-width:760px) 300px, 220px"><img src="img/temoin-jules-ferrer-480.webp" width="480" height="640" alt="Jules Ferrer" loading="lazy" decoding="async"></picture><div class="tm-body"><blockquote>«&nbsp;Dans un secteur aussi exigeant que le nôtre, Emile a compris nos enjeux vite et les a traduits en une marque singulière et efficace.&nbsp;»</blockquote><figcaption><b>Jules Ferrer</b><span class="soft">Cofondateur de Rift Capital</span></figcaption></div></figure><figure class="tm"><picture class="pic"><source type="image/avif" srcset="img/temoin-justine-petit-bramon-300.avif 300w, img/temoin-justine-petit-bramon-480.avif 480w" sizes="(min-width:760px) 300px, 220px"><source type="image/webp" srcset="img/temoin-justine-petit-bramon-300.webp 300w, img/temoin-justine-petit-bramon-480.webp 480w" sizes="(min-width:760px) 300px, 220px"><img src="img/temoin-justine-petit-bramon-480.webp" width="480" height="640" alt="Justine Petit-Bramon" loading="lazy" decoding="async"></picture><div class="tm-body"><blockquote>«&nbsp;L'avantage avec Emile, c'est qu'il est possible de s'exprimer sans le froisser, qu'il comprend vite et s'adapte parfaitement. Il traite les besoins et les intérêts de ses clients comme si c'étaient les siens. C'est donc un plaisir de les lui confier&nbsp;!&nbsp;»</blockquote><figcaption><b>Justine Petit-Bramon</b><span class="soft">Fondatrice de Wide</span></figcaption></div></figure></div>
   </section>
   ${cta()}`;
 }
@@ -948,6 +951,14 @@ function route(){
   if (!STATIC){ document.title = 'milit.fr · ' + title; window.scrollTo(0, 0); }
   afterRender(nav);
 }
+document.addEventListener('click', (e) => {
+  const b = e.target.closest && e.target.closest('[data-tm]'); if (!b) return;
+  const t = b.closest('.temoins').querySelector('.tm-track'); const c = t.firstElementChild;
+  const step = c ? c.getBoundingClientRect().width + 40 : t.clientWidth, max = t.scrollWidth - t.clientWidth, d = Number(b.dataset.tm);
+  let x = t.scrollLeft + step * d;
+  if (d > 0 && t.scrollLeft >= max - 5) x = 0; else if (d < 0 && t.scrollLeft <= 5) x = max;
+  t.scrollTo({ left: x, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
 function afterRender(nav){
   if (app.classList) app.classList.toggle('home', nav === '');
   const ml = app.querySelector && app.querySelector('[data-mail]');
